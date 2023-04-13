@@ -1,0 +1,95 @@
+body{ 
+    background-image: url("./img/fondo.png");
+    min-height: 100vh;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px;
+    background-color: #00000088;
+    list-style: none;
+}
+
+.rojo{
+    background-image: url("./img/rojo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 36px;
+    height: 36px;
+    list-style: none;
+
+}
+.azul{
+    background-image: url("./img/azul.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 36px;
+    height: 36px;
+    list-style: none;
+}
+.icon{
+    justify-content: center;
+    align-items: center;
+    
+}
+.tarjetas{
+    margin-top: 30px;
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(6 ,1fr);
+    gap: 20px;
+    margin-bottom: 100px;
+}
+
+.elem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 184px;
+    height: 282px;
+    border-radius: 15px;
+    background-image: url("./img/cart-black.svg");
+    background-size: cover;
+    cursor: pointer;
+}
+
+.tarjetas:hover .elem {
+    transform: rotateY(180deg);
+}
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.footer{
+    display: flex;
+    flex-shrink: 0;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    background-color: #00000088;
+    align-items: center;
+    justify-content: center;
+}
+.elem:hover {
+    animation: shake 0.7s;
+}
+@keyframes shake {
+    0% { transform: translate(0, 0); }
+    10% { transform: translate(-8px, 0); }
+    20% { transform: translate(8px, 0); }
+    30% { transform: translate(-8px, 0); }
+    40% { transform: translate(8px, 0); }
+    50% { transform: translate(-8px, 0); }
+    60% { transform: translate(8px, 0); }
+    70% { transform: translate(-8px, 0); }
+    80% { transform: translate(8px, 0); }
+    90% { transform: translate(-8px, 0); }
+    100% { transform: translate(0, 0); }
+}
