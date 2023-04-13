@@ -38,7 +38,7 @@ body{
     margin-top: 30px;
     flex: 1;
     display: grid;
-    grid-template-columns: repeat(6 ,1fr);
+    grid-template-columns: repeat(4 ,1fr);
     gap: 20px;
     margin-bottom: 100px;
 }
@@ -51,8 +51,7 @@ body{
     background-repeat: no-repeat;
     width: 184px;
     height: 282px;
-    border-radius: 15px;
-    background-image: url("./img/cart-black.svg");
+    border-radius: 25px;
     background-size: cover;
     cursor: pointer;
 }
@@ -73,23 +72,70 @@ body{
     bottom: 0;
     width: 100%;
     height: 80px;
-    background-color: #00000088;
+    background-color: #ee3a3afa;
     align-items: center;
     justify-content: center;
 }
 .elem:hover {
-    animation: shake 0.7s;
+    animation: shake 0.8s;
 }
 @keyframes shake {
     0% { transform: translate(0, 0); }
-    10% { transform: translate(-8px, 0); }
-    20% { transform: translate(8px, 0); }
-    30% { transform: translate(-8px, 0); }
-    40% { transform: translate(8px, 0); }
-    50% { transform: translate(-8px, 0); }
-    60% { transform: translate(8px, 0); }
-    70% { transform: translate(-8px, 0); }
-    80% { transform: translate(8px, 0); }
-    90% { transform: translate(-8px, 0); }
+    10% { transform: translate(-10px, 0); }
+    20% { transform: translate(10px, 0); }
+    30% { transform: translate(-10px, 0); }
+    40% { transform: translate(10px, 0); }
+    50% { transform: translate(-10px, 0); }
+    60% { transform: translate(10px, 0); }
+    70% { transform: translate(-10px, 0); }
+    80% { transform: translate(10px, 0); }
+    90% { transform: translate(-10px, 0); }
     100% { transform: translate(0, 0); }
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 20px;
+}
+
+.flip-card {
+    width: 100%;
+    height: 300px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 3s;
+    transform-style: preserve-3d;
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    background-color: blue;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+}
+
+.flip-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
 }
